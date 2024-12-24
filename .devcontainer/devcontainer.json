@@ -9,5 +9,9 @@
   "settings": {
       "terminal.integrated.shell.linux": "/bin/bash"
   },
-  "postCreateCommand": "./setup.sh"
+  "postCreateCommand": [
+    "dotnet restore",
+    "./setup.sh"
+],
+  "remoteUser": "vscode"
 }
