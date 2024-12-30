@@ -1,12 +1,8 @@
 FROM mcr.microsoft.com/dotnet/sdk:7.0
 WORKDIR /app
+COPY Samples/Phi3Sample.csproj ./Samples/
+RUN dotnet restore ./Samples/Phi3Sample.csproj
 COPY . .
-RUN apt-get update && apt-get install -y \
-    wget \
-    libfoo-dev \
-    libbar-dev && \
-    rm -rf /var/lib/apt/lists/* && \
-    dotnet restore
-RUN dotnet publish -c Release -o out
+RUN dotnet publish ./Samples/Phi3Sample.csproj -c Release -o out
 WORKDIR /app/out
-CMD ["dotnet", "SampleProject.dll"]
+CMD ["dotnet", "Phi3Sample.dll"]
