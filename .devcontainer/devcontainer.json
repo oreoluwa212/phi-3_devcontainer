@@ -12,5 +12,5 @@
       }
     }
   },
-  "postCreateCommand": "dotnet restore"
+  "postCreateCommand": ["dotnet restore", "./setup.sh"]
 }
