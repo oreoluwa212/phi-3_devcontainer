@@ -1,17 +1,16 @@
 {
-  "version": "2",
   "name": "Daytona .NET Environment",
   "dockerFile": "Dockerfile",
-  "extensions": [
-      "ms-dotnettools.csharp",
-      "ms-vscode.vscode-node-azure-pack"
-  ],
-  "settings": {
-      "terminal.integrated.shell.linux": "/bin/bash"
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-vscode.vscode-node-azure-pack"
+      ],
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      }
+    }
   },
-  "postCreateCommand": [
-    "dotnet restore",
-    "./setup.sh"
-],
-  "remoteUser": "vscode"
+  "postCreateCommand": "dotnet restore"
 }
