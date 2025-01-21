@@ -1,16 +1,17 @@
 {
-  "name": "Daytona .NET Environment",
-  "dockerFile": "Dockerfile",
+  "name": "Daytona .NET Environment for Phi-3",
+  "image": "mcr.microsoft.com/dotnet/sdk:9.0",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+  },
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-dotnettools.csharp",
-        "ms-vscode.vscode-node-azure-pack"
-      ],
-      "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
-      }
+        "ms-vscode.cpptools",
+        "visualstudioexptteam.vscodeintellicode"
+      ]
     }
   },
-  "postCreateCommand": ["dotnet restore", "./setup.sh"]
+  "postCreateCommand": "dotnet restore Phi3Sample.csproj"
 }
