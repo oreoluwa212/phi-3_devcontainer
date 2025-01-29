@@ -7,6 +7,7 @@ WORKDIR /app
 # Copy the project file and restore dependencies
 COPY Phi3Sample.csproj ./
 RUN dotnet restore
+RUN apt-get update && apt-get install -y docker.io
 
 # Copy the rest of the application files
 COPY . ./

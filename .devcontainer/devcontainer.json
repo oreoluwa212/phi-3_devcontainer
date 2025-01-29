@@ -1,9 +1,6 @@
 {
   "name": "Daytona .NET Environment for Phi-3",
   "image": "mcr.microsoft.com/dotnet/sdk:9.0",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:1": {}
-  },
   "customizations": {
     "vscode": {
       "extensions": [
